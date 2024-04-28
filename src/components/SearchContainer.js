@@ -5,7 +5,6 @@ import { bankTransactions } from '../Data'
 
 function SearchContainer() {
     const [searchTerm, setSearchTerm] = useState('')
-
     const handleSearch = (searchTerm) => {
     console.log('Searching for:', searchTerm)
     setSearchTerm(searchTerm)

@@ -6,6 +6,7 @@ function AddTransaction() {
     const [description, setDescription] = useState('')
     const [category, setCategory] = useState('')
     const [amount, setAmount] = useState('')
+    
     function handleSubmit(e) {
         e.preventDefault()
         const newTransaction = {
