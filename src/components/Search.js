@@ -6,7 +6,12 @@ function Search({ onsearch }) {
     function handleSearch(e) {
         const searchTerm = e.target.value
         setSearch(searchTerm);
-        onsearch(searchTerm)
+        
+
+        if (typeof onsearch === 'function') {
+            onsearch(searchTerm)
+        }
+
     }
   return (
     <div className='search-container'>

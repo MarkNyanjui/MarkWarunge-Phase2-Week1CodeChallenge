@@ -4,15 +4,15 @@ import TransactionItem from './TransactionItem'
 import { bankTransactions } from '../Data'
 
 
-function Transactions({Transactions}) {
+function Transactions({ Transactions }) {
   return (
     <div className='transactions-container'>
-      
-        
-              <TransactionItem props={bankTransactions} />
-        
-        
-        </div>
+
+
+      <TransactionItem props={bankTransactions} />
+
+
+    </div>
   )
 }
 

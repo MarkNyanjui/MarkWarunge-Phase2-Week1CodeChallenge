@@ -8,12 +8,15 @@ import AddTransaction from './components/AddTransaction';
 
 function App() {
 
+  const handleSearch = (searchTerm) => {
+    console.log('Searching for:', searchTerm);
+  }
   return (
     <div className="App">
-      <Search />
       <Navbar />
+      <Search onsearch={handleSearch}/>
       <AddTransaction />
-      <Transactions/>
+      <Transactions />
 
 
     </div>

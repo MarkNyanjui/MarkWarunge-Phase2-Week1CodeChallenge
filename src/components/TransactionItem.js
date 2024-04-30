@@ -20,7 +20,8 @@ function TransactionItem({ props}) {
         <td>{date}</td>
         <td>{description}</td>
         <td>{category}</td>
-        <td>Ksh{amount}</td>
+        <td>Ksh {amount}</td>
+
         
         
       </tr>
