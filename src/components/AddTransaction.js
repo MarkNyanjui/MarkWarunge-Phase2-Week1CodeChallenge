@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { bankTransactions } from '../Data';
 
 
-
 export function AddTransaction() {
     const [date, setDate] = useState('');
     const [description, setDescription] = useState('');
@@ -13,20 +12,20 @@ export function AddTransaction() {
     function handleSubmit(e) {
         e.preventDefault();
         const newTransaction = {
-            id: Math.floor(Math.random()),
+            id: Math.floor(Math.random() * 1000000),
             date,
             description,
             category,
-            amount
+            amount 
         };
 
         setTransactions([...transactions, newTransaction]);
 
 
-        setDate(' ')
-        setDescription(' ')
-        setCategory(' ')
-        setAmount(' ')
+        setDate('');
+        setDescription('');
+        setCategory('');
+        setAmount('');
 
     }
     return (
@@ -35,24 +34,24 @@ export function AddTransaction() {
                 <div className='field'>
                     <input
                         value={date}
-                        onClick={(e) => setDate(e.target.value)}
+                        onChange={(e) => setDate(e.target.value)}
                         type='date'
                         name='date' />
                     <input
                         value={description}
-                        onClick={(e) => setDescription(e.target.value)}
+                        onChange={(e) => setDescription(e.target.value)}
                         type='text'
                         name='description'
                         placeholder='Description' />
                     <input
                         value={category}
-                        onClick={(e) => setCategory(e.target.value)}
+                        onChange={(e) => setCategory(e.target.value)}
                         type='text'
                         name='category'
                         placeholder='Category' />
                     <input
                         value={amount}
-                        onClick={(e) => setAmount(e.target.value)}
+                        onChange={(e) => setAmount(e.target.value)}
                         type='number'
                         name='amount'
                         placeholder='Amount' />

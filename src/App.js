@@ -17,8 +17,6 @@ function App() {
       <Search onsearch={handleSearch}/>
       <AddTransaction />
       <Transactions />
-
-
     </div>
   );
 }
