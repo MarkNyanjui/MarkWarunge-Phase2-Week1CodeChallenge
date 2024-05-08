@@ -1,26 +1,32 @@
-import React, { useState } from 'react'
-import { bankTransactions } from '../Data'
+import React, { useState } from 'react';
+import { bankTransactions } from '../Data';
 
-function AddTransaction() {
-    const [date, setDate] = useState('')
-    const [description, setDescription] = useState('')
-    const [category, setCategory] = useState('')
-    const [amount, setAmount] = useState('')
-    
+
+
+export function AddTransaction() {
+    const [date, setDate] = useState('');
+    const [description, setDescription] = useState('');
+    const [category, setCategory] = useState('');
+    const [amount, setAmount] = useState('');
+    const [transactions, setTransactions] = useState(bankTransactions);
+
     function handleSubmit(e) {
-        e.preventDefault()
+        e.preventDefault();
         const newTransaction = {
-            id: Math.floor(Math.random() * 100000000),
+            id: Math.floor(Math.random()),
             date,
             description,
             category,
             amount
-        }
-        bankTransactions.push(newTransaction)
-        setDate('')
-        setDescription('')
-        setCategory('')
-        setAmount('')
+        };
+
+        setTransactions([...transactions, newTransaction]);
+
+
+        setDate(' ')
+        setDescription(' ')
+        setCategory(' ')
+        setAmount(' ')
 
     }
     return (
@@ -29,26 +35,24 @@ function AddTransaction() {
                 <div className='field'>
                     <input
                         value={date}
-                        onChange={(e) => setDate(e.target.value)}
+                        onClick={(e) => setDate(e.target.value)}
                         type='date'
-                        name='date'
-                    />
+                        name='date' />
                     <input
                         value={description}
-                        onChange={(e) => setDescription(e.target.value)}
+                        onClick={(e) => setDescription(e.target.value)}
                         type='text'
                         name='description'
-                        placeholder='Description'
-                    />
+                        placeholder='Description' />
                     <input
                         value={category}
-                        onChange={(e) => setCategory(e.target.value)}
+                        onClick={(e) => setCategory(e.target.value)}
                         type='text'
                         name='category'
                         placeholder='Category' />
                     <input
                         value={amount}
-                        onChange={(e) => setAmount(e.target.value)}
+                        onClick={(e) => setAmount(e.target.value)}
                         type='number'
                         name='amount'
                         placeholder='Amount' />
@@ -58,7 +62,6 @@ function AddTransaction() {
                 </button>
             </form>
         </div>
-    )
-}
 
-export default AddTransaction
+    );
+}

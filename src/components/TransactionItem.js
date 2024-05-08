@@ -21,7 +21,6 @@ function TransactionItem({ props}) {
         <td>{description}</td>
         <td>{category}</td>
         <td>Ksh {amount}</td>
-
         
         
       </tr>

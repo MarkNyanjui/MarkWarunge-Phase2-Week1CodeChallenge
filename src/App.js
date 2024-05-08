@@ -3,7 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar'
 import Transactions from './components/TransactionsTable'
 import Search from './components/Search'
-import AddTransaction from './components/AddTransaction';
+import { AddTransaction } from './components/AddTransaction'
 
 
 function App() {

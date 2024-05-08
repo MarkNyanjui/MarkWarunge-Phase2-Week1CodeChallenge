@@ -10,7 +10,7 @@ function SearchContainer() {
     setSearchTerm(searchTerm)
 }
 const filteredTransactions = bankTransactions.filter(transactions => 
-    transactions.description.toLowerCase().includes(searchTerm.toLowerCase())
+  transactions.description.toLowerCase().includes(searchTerm.toLowerCase())
 )
   return (
     <div>
@@ -20,5 +20,6 @@ const filteredTransactions = bankTransactions.filter(transactions =>
     </div>
   )
 }
+
 
 export default SearchContainer
