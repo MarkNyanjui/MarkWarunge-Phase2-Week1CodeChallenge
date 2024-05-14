@@ -1,9 +1,9 @@
-import logo from './logo.svg'
 import './App.css';
 import Navbar from './components/Navbar'
 import Transactions from './components/TransactionsTable'
 import Search from './components/Search'
 import { AddTransaction } from './components/AddTransaction'
+import { bankTransactions } from './Data';
 
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
     <div className="App">
       <Navbar />
       <Search onsearch={handleSearch}/>
-      <AddTransaction />
+      <AddTransaction bankTransactions={bankTransactions}/>
       <Transactions />
     </div>
   );

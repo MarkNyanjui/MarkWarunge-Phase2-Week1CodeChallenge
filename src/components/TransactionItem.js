@@ -2,10 +2,10 @@ import React from 'react'
 import "./TransactionItem.css"
 
 
-function TransactionItem({ props}) {
+function TransactionItem({ props }) {
     return (
         <div className='transactionItem'>
-            <table class="table">
+            <table className="table">
                 <thead>
                     <tr>
                         <th scope="col">Date</th>
@@ -15,24 +15,16 @@ function TransactionItem({ props}) {
                     </tr>
                 </thead>
                 <tbody>
-                {props.map(({id,date, description,category,amount}) => (
-        <tr key ={id}>
-        <td>{date}</td>
-        <td>{description}</td>
-        <td>{category}</td>
-        <td>Ksh {amount}</td>
-        
-        
-      </tr>
-      
-      
-
-    ))}
-   
-    
-  </tbody>
-</table>
-
+                    {props.map(({ id, date, description, category, amount }) => (
+                        <tr key={id}>
+                            <td>{date}</td>
+                            <td>{description}</td>
+                            <td>{category}</td>
+                            <td>Ksh {amount}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
         </div>
     )
 }

@@ -7,10 +7,7 @@ function Search({ onsearch }) {
         const searchTerm = e.target.value
         setSearch(searchTerm);
         
-
-        if (typeof onsearch === 'function') {
-            onsearch(searchTerm)
-        }
+onsearch(searchTerm);
 
     }
   return (

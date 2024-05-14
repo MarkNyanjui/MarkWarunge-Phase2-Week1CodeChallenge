@@ -1,33 +1,31 @@
 import React, { useState } from 'react';
-import { bankTransactions } from '../Data';
 
 
-export function AddTransaction() {
+export function AddTransaction({ bankTransactions }) {
     const [date, setDate] = useState('');
     const [description, setDescription] = useState('');
     const [category, setCategory] = useState('');
     const [amount, setAmount] = useState('');
     const [transactions, setTransactions] = useState(bankTransactions);
 
-    function handleSubmit(e) {
+    const handleSubmit = (e) => {
         e.preventDefault();
         const newTransaction = {
             id: Math.floor(Math.random() * 1000000),
             date,
             description,
             category,
-            amount 
+            amount
         };
 
         setTransactions([...transactions, newTransaction]);
-
-
         setDate('');
         setDescription('');
         setCategory('');
         setAmount('');
 
     }
+
     return (
         <div className='addtransaction'>
             <form onSubmit={handleSubmit} className='ui form'>
